@@ -1,0 +1,12 @@
+
+.App {
+  min-height: 50vh;
+  min-width: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+  flex-direction: column;
+  font-size: calc(10px + 1.5vmin);
+  color: rgb(0, 0, 0);
+}

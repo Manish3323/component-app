@@ -1,0 +1,55 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react-hooks/recommended",
+    "plugin:testing-library/react"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "import",
+    "react",
+    "react-hooks",
+    "testing-library"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/no-explicit-any": 2,
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "import/no-absolute-path": 2,
+    "import/first": 2,
+    "import/no-mutable-exports": "error",
+    "import/no-nodejs-modules": 2,
+    // ensure absolute imports are above relative imports and that unassigned imports are ignored
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external", "internal"]],
+        "alphabetize": {
+          "order": "asc" /* sort in ascending order. Options: ["ignore", "asc", "desc"] */,
+          "caseInsensitive": true /* ignore case. Options: [true, false] */
+        }
+      }
+    ],
+    "eqeqeq": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./src"
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
