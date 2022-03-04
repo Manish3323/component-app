@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable import/no-nodejs-modules */
-import exec from 'child_process'
+import process from 'child_process'
 console.log('helloooo')
-const myShellScript = exec('sh ./bin/start.sh')
+const myShellScript = process.exec('sh ./bin/start.sh')
 myShellScript.stdout.on('data', (data) => {
   console.log(data)
 })
