@@ -5,6 +5,9 @@
   "license": "Apache License, Version 2.0",
   "private": true,
   "type": "module",
+  "bin": {
+    "component-app": "./bin/start.sh"
+  },
   "dependencies": {
     "@tmtsoftware/esw-ts": "0.3.0",
     "antd": "^4.18.5",
