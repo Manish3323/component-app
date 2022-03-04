@@ -5,7 +5,9 @@
   "license": "Apache License, Version 2.0",
   "private": true,
   "type": "module",
-  "bin": "./bin/index.js",
+  "bin": {
+    "component-app": "./bin/index.js"
+  },
   "dependencies": {
     "@tmtsoftware/esw-ts": "0.3.0",
     "antd": "^4.18.5",
@@ -27,7 +29,6 @@
     "last 1 chrome version"
   ],
   "devDependencies": {
-    "vite-web-test-runner-plugin": "^0.1.0",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
@@ -37,6 +38,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
     "@web/test-runner": "^0.13.26",
     "chai": "^4.3.6",
     "eslint": "^8.8.0",
@@ -46,11 +48,11 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-testing-library":"^5.0.5",
+    "eslint-plugin-testing-library": "^5.0.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
+    "typescript": "^4.5.5",
     "vite": "^2.7.13",
-    "@vitejs/plugin-react-refresh": "^1.3.6",
-    "typescript": "^4.5.5"
+    "vite-web-test-runner-plugin": "^0.1.0"
   }
 }
