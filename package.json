@@ -6,7 +6,7 @@
   "private": true,
   "type": "module",
   "bin": {
-    "component-app": "./index.js"
+    "component-app": "./bin/index.js"
   },
   "dependencies": {
     "@tmtsoftware/esw-ts": "0.3.0",
