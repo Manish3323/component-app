@@ -7,12 +7,16 @@ import './index.css'
 import 'antd/dist/antd.css'
 
 setAppName(AppConfig.applicationName)
-
+const AUTH_MODE = import.meta.env.VITE_AUTH_MODE === 'true'
 render(
   <React.StrictMode>
-    <AuthContextProvider>
+    {!AUTH_MODE ? (
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
+    ) : (
       <App />
-    </AuthContextProvider>
+    )}
   </React.StrictMode>,
   document.getElementById('root')
 )

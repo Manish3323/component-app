@@ -35,22 +35,29 @@ const App = (): JSX.Element => {
     loadGlobalConfig().then(() => true)
   )
   const locationService = LocationService()
-  const { auth } = useAuth()
   if (error) return <div> Failed to load global config </div>
-
-  if (!(auth && initialised)) return <Result icon={<LoadingOutlined />} />
+  if (!initialised) return <Result icon={<LoadingOutlined />} />
 
   return initialised ? (
     <LocationServiceProvider locationService={locationService}>
       <AdminServiceContext>
-        {auth.isAuthenticated() && <Logout />}
         <Router basename={basename}>
-          <Routes loggedIn={auth.isAuthenticated() ?? false} />
+          <AuthRoutes />
         </Router>
       </AdminServiceContext>
     </LocationServiceProvider>
   ) : (
     <div>Loading....</div>
+  )
+}
+
+const AuthRoutes = () => {
+  const { auth } = useAuth()
+  return (
+    <>
+      {auth?.isAuthenticated() && <Logout />}
+      <Routes loggedIn={auth?.isAuthenticated() ?? false} />
+    </>
   )
 }
 

@@ -47,6 +47,7 @@ export const ComponentList = (): JSX.Element => {
   >([])
   React.useEffect(() => {
     locationService.listByConnectionType('akka').then((l) => {
+      console.log(l)
       setCompConnections(
         l
           .filter(
@@ -58,7 +59,7 @@ export const ComponentList = (): JSX.Element => {
           .sort((a, b) => a.prefix.toJSON().localeCompare(b.prefix.toJSON()))
       )
     })
-  })
+  }, [locationService])
 
   const onSelect = (connection: string) => {
     const [prefix, componentType] = connection.split('-')
