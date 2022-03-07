@@ -1,6 +1,0 @@
-{
-  "short_name": "component-app",
-  "name": "component-app",
-  "start_url": "./index.html",
-  "display": "standalone"
-}
